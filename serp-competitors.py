@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.sidebar.title('Know your Competitors')
-keyword = st.sidebar.text_input(label="Digite a Palavra-Chave", value="Palavra-Chave aqui", max_chars=None, key=None, help='A palavra-chave que gostaria de buscar os competidores. Apenas uma palavra por vez.')
+keyword = st.sidebar.text_input(label="Digite a Palavra-Chave", value="Palavra-Chave", max_chars=None, key=None, help='A palavra-chave que gostaria de buscar os competidores. Apenas uma palavra por vez.')
 language = st.sidebar.selectbox('Escolha o Idioma da Busca',['Português', 'Inglês'])
 numberKeywords = st.sidebar.slider('Número de Competidores:', min_value=1, max_value=20)
 
