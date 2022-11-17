@@ -17,4 +17,5 @@ if st.sidebar.button('Buscar Competidores'):
     for result in search(keyword, num=numberKeywords, stop=numberKeywords, lang=language):
         st.markdown(result)
 
-st.sidebar.markdown('Script by [Vinicius Stanula](https://share.streamlit.io/mesmith027/streamlit_webapps/main/MC_pi/streamlit_app.py)')
+st.sidebar.markdown('Script by [Vinicius Stanula](https://viniciusstanula.com/)')
+st.sidebar.markdown('Python Library By [Nv7](https://pypi.org/project/googlesearch-python/)')
