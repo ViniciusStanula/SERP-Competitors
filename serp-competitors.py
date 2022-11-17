@@ -1,4 +1,4 @@
-!pip install google -q
+pip install google -q
 
 from googlesearch import search
 query = "analista de seo"
