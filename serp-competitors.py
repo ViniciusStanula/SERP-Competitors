@@ -60,7 +60,7 @@ with c1:
     if language == "Inglês":
         language = "en"
     elif language == "Português":
-        language = "pt-br"
+        language = "pt-BR"
 
         botao = st.button("Buscar Competidores ✨")
 
