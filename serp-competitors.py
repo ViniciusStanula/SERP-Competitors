@@ -54,7 +54,7 @@ with c1:
         key=None,
         help="A palavra-chave que gostaria de buscar os competidores. Apenas uma palavra por vez.",
     )
-    language = st.selectbox("Escolha o Idioma da Busca", ["Português", "Inglês"])
+    language = st.selectbox("Escolha o Idioma da Busca", ["Português"])
     numberKeywords = st.slider("Número de Competidores:", min_value=1, max_value=20)
 
     botao = st.button("Buscar Competidores ✨")
