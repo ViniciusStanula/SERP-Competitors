@@ -34,7 +34,7 @@ with st.expander("ℹ - Sobre o App", expanded=True):
     st.write(
         """     
 -   Essa ferramenta tem como objetivo extrair o top 20 competidores para uma determinada palavra-chave. Basta inserir a palavra-chave, escolher o idioma e quantos competidores gostaria de descobrir!
--   Front-end do Script criado por [Vinicius Stanula](https://huggingface.co/transformers/) usando uma biblioteca Python criada por Nv7.
+-   Front-end do Script criado por Vinicius Stanula usando uma biblioteca Python criada por Nv7.
 	    """
     )
 
