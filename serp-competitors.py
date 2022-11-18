@@ -57,12 +57,7 @@ with c1:
     language = st.selectbox("Escolha o Idioma da Busca", ["Português", "Inglês"])
     numberKeywords = st.slider("Número de Competidores:", min_value=1, max_value=20)
 
-    if language == "Inglês":
-        language = "en"
-    elif language == "Português":
-        language = "pt-BR"
-
-        botao = st.button("Buscar Competidores ✨")
+    botao = st.button("Buscar Competidores ✨")
 
     with c2:
         st.markdown(
@@ -73,7 +68,7 @@ with c1:
             from googlesearch import search
 
             for result in search(
-                keyword, num=numberKeywords, stop=numberKeywords, lang=language
+                keyword, num=numberKeywords, stop=numberKeywords, lang="pt-BR"
             ):
                 st.markdown(result)
 st.markdown("----")
