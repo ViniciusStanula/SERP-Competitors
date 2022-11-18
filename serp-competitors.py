@@ -1,21 +1,79 @@
 import streamlit as st
 
-st.sidebar.title('Know your Competitors')
-keyword = st.sidebar.text_input(label="Digite a Palavra-Chave", value="Palavra-Chave", max_chars=None, key=None, help='A palavra-chave que gostaria de buscar os competidores. Apenas uma palavra por vez.')
-language = st.sidebar.selectbox('Escolha o Idioma da Busca',['Português', 'Inglês'])
-numberKeywords = st.sidebar.slider('Número de Competidores:', min_value=1, max_value=20)
+st.set_page_config(
+    page_title="Conheça seus Competidores!",
+    page_icon="🔎",
+    layout="wide",
+)
 
-if language == 'Inglês':
-    language = 'en'
-elif language == 'Português':
-    language = 'pt-br'
 
-st.write('Aqui estão seus competidores:')
+def _max_width_():
+    max_width_str = f"max-width: 2000px;"
+    st.markdown(
+        f"""
+    <style>
+    .reportview-container .main .block-container{{
+        {max_width_str}
+    }}
+    </style>    
+    """,
+        unsafe_allow_html=True,
+    )
 
-if st.sidebar.button('Buscar Competidores'):
-    from googlesearch import search
-    for result in search(keyword, num=numberKeywords, stop=numberKeywords, lang=language):
-        st.markdown(result)
 
-st.sidebar.markdown('Script by [Vinicius Stanula](https://viniciusstanula.com/)')
-st.sidebar.markdown('Python Library By [Nv7](https://pypi.org/project/googlesearch-python/)')
+_max_width_()
+
+c30, c31 = st.columns([10.5, 1])
+
+with c30:
+    # st.image("logo.png", width=400)
+    st.title("🔎 Conheça seus Competidores!")
+    st.markdown("")
+
+with st.expander("ℹ - Sobre o App", expanded=True):
+    st.write(
+        """     
+-   Essa ferramenta tem como objetivo extrair o top 20 competidores para uma determinada palavra-chave. Basta inserir a palavra-chave, escolher o idioma e quantos competidores gostaria de descobrir!
+-   Front-end do Script criado por [Vinicius Stanula](https://huggingface.co/transformers/) usando uma biblioteca Python criada por Nv7.
+	    """
+    )
+
+    st.markdown("")
+
+st.markdown("")
+st.markdown("----")
+st.markdown("## 📌 Digite a Palavra-chave")
+
+c1, c2 = st.columns([1.5, 4])
+
+with c1:
+    keyword = st.text_input(
+        label="Digite a Palavra-Chave",
+        value="SEO",
+        max_chars=None,
+        key=None,
+        help="A palavra-chave que gostaria de buscar os competidores. Apenas uma palavra por vez.",
+    )
+    language = st.selectbox("Escolha o Idioma da Busca", ["Português", "Inglês"])
+    numberKeywords = st.slider("Número de Competidores:", min_value=1, max_value=20)
+
+    if language == "Inglês":
+        language = "en"
+    elif language == "Português":
+        language = "pt-br"
+
+        botao = st.button("Buscar Competidores ✨")
+
+    with c2:
+        st.markdown(
+            "Aqui estão seus competidores:",
+        )
+
+        if botao:
+            from googlesearch import search
+
+            for result in search(
+                keyword, num=numberKeywords, stop=numberKeywords, lang=language
+            ):
+                st.markdown(result)
+st.markdown("----")
