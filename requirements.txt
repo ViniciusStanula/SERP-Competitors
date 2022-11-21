@@ -1,5 +1,1 @@
-streamlit
-requests
-json
-locale
-pandas
+
