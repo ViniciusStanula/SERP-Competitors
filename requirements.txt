@@ -1,1 +1,2 @@
 language-pack-pt-br
+locales
