@@ -135,7 +135,6 @@ with c1:
             st.dataframe(df)
 
             csv = convert_df(df)
-            excel = convert_df_excel(df)
 
             st.download_button(
                 label="Download da tabela como CSV",
