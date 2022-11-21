@@ -16,10 +16,6 @@ def convert_df(df):
     return df.to_csv().encode("utf-8-sig")
 
 
-# Definir local, para converter preço e números para o padrão PT-BR
-locale.setlocale(locale.LC_ALL, "pt_BR.UTF-8")
-
-
 def _max_width_():
     max_width_str = f"max-width: 2000px;"
     st.markdown(
