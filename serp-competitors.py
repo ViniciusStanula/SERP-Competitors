@@ -122,7 +122,7 @@ with c1:
             for sCompetitors in dados["organic_results"]:
                 sPositions.append(sCompetitors["position"])
                 sDomains.append(sCompetitors["domain"])
-                sUrls.append(sCompetitors["domain"])
+                sUrls.append(sCompetitors["link"])
                 sTitles.append(sCompetitors["title"])
                 sDescription.append(sCompetitors["snippet"])
 
